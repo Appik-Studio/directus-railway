@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ subject | default: 'New Job Alert - Students Pool' }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #ffffff;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 2px solid #38266e;
+        }
+        .logo {
+            max-width: 200px;
+            height: auto;
+        }
+        .content {
+            padding: 30px 20px;
+            color: #0C0C0C;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #524B6B;
+            margin-bottom: 20px;
+        }
+        .description {
+            margin-bottom: 30px;
+        }
+        .cta-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #38266e;
+            color: #ffffff !important;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        .cta-button:hover {
+            background-color: #524B6B;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background-color: #f8f8f8;
+            color: #555555;
+            font-size: 14px;
+        }
+        .social-links {
+            margin-top: 15px;
+        }
+        .social-links a {
+            color: #B3B9C4;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100%;
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{{ logo_url | default: 'http://drive.google.com/uc?export=view&id=1YFM9LKNs-D7pnSf-2CE1BctVnFlcSDns' }}" alt="Students Pool Logo" class="logo">
+            <h1 style="color: #38266e;">{{ company_name | default: 'Students Pool' }}</h1>
+        </div>
+
+        <div class="content">
+            <div class="greeting">
+                {{ greeting | default: 'Hello' }},
+            </div>
+
+            <div class="description">
+                {{ message | default: "We're excited to let you know that a new user joined!" }}
+            </div>
+
+        </div>
+
+        <div class="footer">
+            <p>© {{ 'now' | date: '%Y' }} {{ company_name | default: 'Students Pool' }}. All rights reserved.</p>
+            <div class="social-links">
+                <a href="{{ privacy_policy_url | default: '#' }}">Privacy Policy</a> |
+                <a href="{{ contact_url | default: '#' }}">Contact Us</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
